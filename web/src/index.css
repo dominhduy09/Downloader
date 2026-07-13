@@ -24,19 +24,55 @@
   }
 }
 
-/* Glassmorphism custom classes */
+/* Glassmorphism custom classes - Frosted Morning Dew specifications */
+.glass-dewy {
+  background: rgba(255, 255, 255, 0.18); /* Light white overlay 15-20% */
+  backdrop-filter: blur(15px); /* Background blur 15px */
+  -webkit-backdrop-filter: blur(15px);
+  border: 1px solid rgba(255, 255, 255, 0.2); /* Delicate 1px border at 0.2 opacity */
+  box-shadow: 
+    inset 0 1px 2px 0 rgba(255, 255, 255, 0.15), /* Inner glow for depth */
+    0 10px 20px 0 rgba(0, 0, 0, 0.1); /* Soft shadow: 20px spread, 10% opacity */
+}
+
 .glass-panel {
-  background: rgba(17, 24, 39, 0.7);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.05);
+  background: rgba(15, 23, 42, 0.65); /* Adjusted darkmode overlay (65% slate-900) */
+  backdrop-filter: blur(15px); /* Background blur 15px */
+  -webkit-backdrop-filter: blur(15px);
+  border: 1px solid rgba(255, 255, 255, 0.18); /* Delicate 1px border */
+  box-shadow: 
+    inset 0 1px 2px 0 rgba(255, 255, 255, 0.12), /* Inner glow */
+    0 10px 20px 0 rgba(0, 0, 0, 0.35); /* Soft shadow adjusted for dark mode */
 }
 
 .glass-card {
-  background: rgba(31, 41, 55, 0.4);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-  border: 1px solid rgba(255, 255, 255, 0.03);
+  background: rgba(255, 255, 255, 0.05); /* Light overlay for card depth */
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 
+    inset 0 1px 1px 0 rgba(255, 255, 255, 0.08),
+    0 6px 15px 0 rgba(0, 0, 0, 0.25);
+}
+
+.topbar-glass-dark {
+  background: rgba(15, 23, 42, 0.7); /* Dark mode header base */
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12); /* Delicate bottom border */
+  box-shadow: 
+    inset 0 -1px 0 0 rgba(255, 255, 255, 0.05), /* Subtle inner glow */
+    0 10px 20px 0 rgba(0, 0, 0, 0.2); /* Soft shadow */
+}
+
+.footer-glass-dark {
+  background: rgba(15, 23, 42, 0.6); /* Dark mode footer base */
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  border-top: 1px solid rgba(255, 255, 255, 0.1); /* Delicate top border */
+  box-shadow: 
+    inset 0 1px 0 0 rgba(255, 255, 255, 0.05), /* Subtle inner glow */
+    0 -10px 20px 0 rgba(0, 0, 0, 0.15); /* Soft shadow */
 }
 
 /* Custom glow effect */
