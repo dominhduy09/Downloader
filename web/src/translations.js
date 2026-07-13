@@ -11,7 +11,17 @@ export const translations = {
     chromeCompanion: "Chrome Companion",
     chromePromoDesc: "Right-click links or download videos with a single click.",
     downloadZipBtn: "Download ZIP",
-    statusOperational: "Operational (149ms)",
+    statusOperational: "Operational",
+    statusChecking: "Checking...",
+    statusOffline: "Offline",
+
+    // Updates changelog
+    updateTitle: "Update Notifications",
+    updateLog1: "Added interactive WebGL 3D Particle background with parallax sway.",
+    updateLog2: "Introduced translation context supporting English, Spanish, Vietnamese, French, and Japanese.",
+    updateLog3: "Restructured layout to a sticky Top Navigation Bar.",
+    updateLog4: "Upgraded status badge to perform live, real-time connectivity pings.",
+    updateLog5: "Standardized all divider boundaries and input borders for styling consistency.",
 
     // Header & Taglines
     badgeText: "GenDownload API Integrated",
@@ -151,7 +161,16 @@ export const translations = {
     chromeCompanion: "Extensión Chrome",
     chromePromoDesc: "Haz clic derecho en enlaces o descarga videos con un solo clic.",
     downloadZipBtn: "Descargar ZIP",
-    statusOperational: "Operativo (149ms)",
+    statusOperational: "Operativo",
+    statusChecking: "Comprobando...",
+    statusOffline: "Desconectado",
+
+    updateTitle: "Notificaciones",
+    updateLog1: "Se agregó un fondo interactivo de partículas WebGL 3D con balanceo de cámara.",
+    updateLog2: "Soporte de traducción para inglés, español, vietnamita, francés y japonés.",
+    updateLog3: "Estructura de navegación rediseñada a una barra superior fija.",
+    updateLog4: "Indicador de estado en tiempo real que mide la latencia de red.",
+    updateLog5: "Bordes y líneas divisorias unificadas para consistencia de estilo.",
 
     badgeText: "API GenDownload Integrada",
     heroTitle: "Downloader",
@@ -229,7 +248,7 @@ export const translations = {
     howExtStep2Title: "Extracción rápida",
     howExtStep2Desc: "Haz clic en el icono de la extensión en cualquier página. Pulsa \"Quick Download\" para extraer el video directamente.",
     howExtStep3Title: "Menú contextual",
-    howExtStep3Desc: "O bien, haz clic derecho en cualquier enlace de video y selecciona \"Send link to Downloader\" para enviarlo a esta pestaña.",
+    howExtStep3Desc: "Or bien, haz clic derecho en cualquier enlace de video y selecciona \"Send link to Downloader\" para enviarlo a esta pestaña.",
 
     faqTitle: "Preguntas frecuentes",
     faqSubtitle: "Encuentra respuestas a problemas comunes, configuración del navegador y dudas generales.",
@@ -281,7 +300,16 @@ export const translations = {
     chromeCompanion: "Tiện ích Chrome",
     chromePromoDesc: "Nhấp chuột phải vào liên kết hoặc tải xuống video chỉ với một cú nhấp.",
     downloadZipBtn: "Tải ZIP",
-    statusOperational: "Hoạt động ổn định (149ms)",
+    statusOperational: "Hoạt động",
+    statusChecking: "Đang kiểm tra...",
+    statusOffline: "Ngoại tuyến",
+
+    updateTitle: "Thông báo cập nhật",
+    updateLog1: "Thêm hình nền động mạng hạt 3D tương tác WebGL hiệu ứng parallax sways.",
+    updateLog2: "Tích hợp đa ngôn ngữ toàn hệ thống: Anh, Tây Ban Nha, Việt Nam, Pháp, Nhật Bản.",
+    updateLog3: "Tái cấu trúc giao diện thành thanh menu ngang cố định ở đầu trang.",
+    updateLog4: "Nâng cấp cụm hiển thị trạng thái server kết nối thực thời gian thực.",
+    updateLog5: "Chuẩn hóa các đường biên phân tách giúp giao diện liền mạch.",
 
     badgeText: "Đã tích hợp API GenDownload",
     heroTitle: "Downloader",
@@ -391,6 +419,7 @@ export const translations = {
     streamDesc: "Tải trực tiếp định dạng đã quét về trình duyệt khách dưới dạng tệp đính kèm (không lưu qua đĩa trung gian).",
     healthDesc: "Kiểm tra kết nối cụm máy chủ, số lượng tác vụ đang xử lý và tình trạng proxy định tuyến của bộ phân giải GenDownload.",
 
+    // Footer
     footerBrandDesc: "Trình tải và trích xuất phương tiện truyền thông mã nguồn mở tối ưu. Dữ liệu được truyền trực tiếp về trình duyệt mà không lưu trên đĩa máy chủ.",
     footerDownloader: "Downloader",
     footerResources: "Tài nguyên",
@@ -411,7 +440,16 @@ export const translations = {
     chromeCompanion: "Extension Chrome",
     chromePromoDesc: "Faites un clic droit sur les liens ou téléchargez des vidéos en un seul clic.",
     downloadZipBtn: "Télécharger le ZIP",
-    statusOperational: "Opérationnel (149ms)",
+    statusOperational: "Opérationnel",
+    statusChecking: "Vérification...",
+    statusOffline: "Hors ligne",
+
+    updateTitle: "Mises à jour",
+    updateLog1: "Ajout d'un fond interactif de particules WebGL 3D avec décalage de parallaxe.",
+    updateLog2: "Intégration i18n pour l'anglais, l'espagnol, le vietnamien, le français et le japonais.",
+    updateLog3: "Restructuration du menu en une barre de navigation supérieure fixe.",
+    updateLog4: "Badge d'état en temps réel pour mesurer la latence réseau en direct.",
+    updateLog5: "Bordures et séparateurs standardisés pour la cohérence visuelle.",
 
     badgeText: "API GenDownload Intégrée",
     heroTitle: "Downloader",
@@ -464,7 +502,7 @@ export const translations = {
     zipNotice: "Note: Les fichiers sont assemblés en temps réel. La compilation ZIP n'est pas enregistrée sur le serveur; les URL erronées seront omises.",
 
     whyTitle: "Pourquoi choisir Downloader ?",
-    whySubtitle: "Nous croyons en un accès simple, rapide et sans compromis aux médias web publics. C'est ce qui définit notre service.",
+    whySubtitle: "We believe in simple, fast, and uncompromised access to public web media. Here is what makes our service standard-defining.",
     whyCard1Title: "Plus de 1 600 sites compatibles",
     whyCard1Desc: "Notre système traite automatiquement les liens de YouTube, TikTok, Instagram, Twitter, Twitch, SoundCloud et des milliers d'autres sites.",
     whyCard2Title: "100% gratuit et sans limite",
@@ -472,7 +510,7 @@ export const translations = {
     whyCard3Title: "Zéro publicité ou traceur",
     whyCard3Desc: "Pas de bannières publicitaires, de redirections ou de cookies de suivi. Juste une interface sombre et épurée pour télécharger directement.",
     whyCard4Title: "Confidentialité absolue protégée",
-    whyCard4Desc: "Nous ne collectons aucun identifiant et les fichiers ne sont jamais stockés sur le serveur. Les données sont transmises directement à votre appareil.",
+    whyCard4Desc: "We collect zero credentials, and files never rest on our server disks. Data stream requests pipe original content on-the-fly straight to your device.",
 
     howTitle: "Comment utiliser Downloader",
     howSubtitle: "Commencez à extraire du contenu en quelques secondes à l'aide de notre site ou de l'extension de navigateur.",
@@ -489,7 +527,7 @@ export const translations = {
     howExtStep2Title: "Extraction rapide",
     howExtStep2Desc: "Cliquez sur l'icône de l'extension sur n'importe quelle page. Cliquez sur \"Quick Download\" pour extraire la vidéo directement.",
     howExtStep3Title: "Menu contextuel",
-    howExtStep3Desc: "Ouy faites un clic droit sur n'importe quel lien vidéo et sélectionnez \"Send link to Downloader\" pour l'envoyer vers cet onglet.",
+    howExtStep3Desc: "Ou faites un clic droit sur n'importe quel lien vidéo et sélectionnez \"Send link to Downloader\" pour l'envoyer vers cet onglet.",
 
     faqTitle: "Foire aux questions",
     faqSubtitle: "Trouvez des réponses aux questions fréquemment posées, au dépannage et aux requêtes générales.",
@@ -521,6 +559,7 @@ export const translations = {
     streamDesc: "Téléchargez le format résolu directement dans le navigateur sous forme de pièce jointe (aucun stockage intermédiaire sur le serveur).",
     healthDesc: "Vérifiez l'état de connectivité, le nombre de tâches actives et les informations de proxy du résolveur GenDownload.",
 
+    // Footer
     footerBrandDesc: "L'extracteur de médias web ultime en open-source. Transmis en temps réel à votre navigateur sans stockage sur disque.",
     footerDownloader: "Téléchargeur",
     footerResources: "Ressources",
@@ -541,7 +580,16 @@ export const translations = {
     chromeCompanion: "Chrome 拡張機能",
     chromePromoDesc: "リンクを右クリックするか、ワンクリックで動画をダウンロードできます。",
     downloadZipBtn: "ZIPをダウンロード",
-    statusOperational: "稼働中 (149ms)",
+    statusOperational: "稼働中",
+    statusChecking: "確認中...",
+    statusOffline: "オフライン",
+
+    updateTitle: "更新履歴・通知",
+    updateLog1: "視差効果を伴うWebGL 3Dパーティクル背景を追加しました。",
+    updateLog2: "英語、スペイン語、ベトナム語、フランス語、日本語の5言語に対応した多言語機能を追加。",
+    updateLog3: "トップナビゲーションバーによるシンプルな横型メニューへ移行。",
+    updateLog4: "サーバーの接続ステータスをミリ秒単位でリアルタイム計測する pinger を実装。",
+    updateLog5: "入力フォームのボーダーや仕切り線をテーマカラーへ unifiy させ一貫性を向上。",
 
     badgeText: "GenDownload API 統合済み",
     heroTitle: "Downloader",
@@ -606,8 +654,8 @@ export const translations = {
 
     howTitle: "Downloader の使い方",
     howSubtitle: "ウェブサイトまたはブラウザ拡張機能を使用して、数秒でコンテンツの抽出を開始できます。",
-    howWebTitle: "ウェブインターフェースのガイド",
-    howExtTitle: "Chrome 拡張機能のガイド",
+    howWebTitle: "ウェブインターフェース of Guide",
+    howExtTitle: "Chrome 拡張機能 of Guide",
     howWebStep1Title: "リンクを貼り付け",
     howWebStep1Desc: "YouTube、TikTokなどの動画リンクをコピーして、メインの入力フォームに貼り付けます。",
     howWebStep2Title: "フォーマットを抽出",
@@ -646,11 +694,12 @@ export const translations = {
     apiExampleUrl: "URL 呼び出し例",
     apiResponseType: "レスポンスの型",
     extractDesc: "入力された動画リンクからストリームURLとフォーマット情報を抽出します。タイトル、サムネイル、作者、再生数、再生時間、画質の一覧を返します。",
-    channelDesc: "プレイリストやチャンネル、製作者のプロフィール内にある動画リンクを一度にインデックス化します。ソース情報と該当の動画一覧を返します。",
+    channelDesc: "プレイリストやチャンネル、製作者のプロフィール内にある動画リンクを一度にインデックス化します。ソース情報と該当 of 動画一覧を返します。",
     zipDesc: "複数のメディアストリームをリアルタイムで直接結合し、1つのZIPアーカイブとしてクライアントに送信します。",
     streamDesc: "抽出されたフォーマットデータを直接クライアントに返送します（サーバー上での一時的な保存はありません）。",
     healthDesc: "接続状況、稼働中のキュー負荷、プロキシの接続ステータスをチェックします。",
 
+    // Footer
     footerBrandDesc: "究極のオープンソース・メディア抽出ツール。ディスク保存なしで、ブラウザにリアルタイムで直接データを送信します。",
     footerDownloader: "ダウンローダー",
     footerResources: "リソース",

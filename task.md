@@ -4,7 +4,6 @@
   - [x] Run `npx create-vite` to bootstrap the React project
   - [x] Install Tailwind CSS, Autoprefixer, and Lucide React
   - [x] Configure Tailwind CSS in Vite and styles in `src/index.css`
-  - [x] Implement the core App layout and styling in `App.jsx`
   - [x] Implement the "Single Video" extractor feature
   - [x] Implement the "Channel & Playlists" browser feature
   - [x] Implement the "Bulk ZIP" downloader feature
@@ -29,6 +28,11 @@
   - [x] Compact footer spacing and container size
   - [x] Format Request Body Schema and Query Parameters tables inside code-block boxes
   - [x] Remove header underlines and top borders to clean layout line clutter
+  - [x] Relocate the health status badge and implement a live health check hook
+  - [x] Localize the live health status indicator states inside translations.js
+  - [x] Add application update notifications button, glass card, and translation keys
+  - [x] Adapt notification trigger mechanics to be hover-group reactive
+  - [x] Remove visual rule line dividers from Home dashboard views and update notification popover
 - [x] Advanced 3D Effects Integration
   - [x] Install Three.js package
   - [x] Create `ThreeBg.jsx` canvas component with 3D particle network

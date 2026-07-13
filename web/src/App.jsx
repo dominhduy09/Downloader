@@ -28,7 +28,8 @@ import {
   Lock,
   ThumbsUp,
   ChevronDown,
-  ChevronUp
+  ChevronUp,
+  Bell
 } from "lucide-react";
 
 const Chrome = (props) => (
@@ -57,6 +58,42 @@ export default function App() {
 
   const [activeSidebar, setActiveSidebar] = useState("home");
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+
+  // Changelog announcement toggler
+  const [showUpdates, setShowUpdates] = useState(false);
+
+  // Live GenDownload Health pinger states
+  const [apiStatus, setApiStatus] = useState("checking");
+  const [latency, setLatency] = useState(0);
+
+  useEffect(() => {
+    const checkApiHealth = async () => {
+      const startTime = performance.now();
+      try {
+        const response = await fetch("https://gendownload.com/api/health", {
+          method: "GET"
+        });
+        if (response.ok) {
+          const data = await response.json();
+          if (data && data.ok) {
+            const endTime = performance.now();
+            setLatency(Math.round(endTime - startTime));
+            setApiStatus("online");
+          } else {
+            setApiStatus("offline");
+          }
+        } else {
+          setApiStatus("offline");
+        }
+      } catch (err) {
+        setApiStatus("offline");
+      }
+    };
+
+    checkApiHealth();
+    const interval = setInterval(checkApiHealth, 25000);
+    return () => clearInterval(interval);
+  }, []);
 
   // Home Screen Inner Tabs (Extraction Methods)
   const [activeTab, setActiveTab] = useState("single");
@@ -343,6 +380,51 @@ export default function App() {
               </div>
             </div>
 
+            {/* Update Notifications Bell */}
+            <div className="relative group">
+              <button
+                className="glass-card hover:bg-white/10 p-2 rounded-xl border border-white/15 text-slate-200 transition-all cursor-pointer relative"
+                title={t("updateTitle")}
+              >
+                <Bell className="w-3.5 h-3.5" />
+                <span className="absolute top-1 right-1 h-1.5 w-1.5 rounded-full bg-violet-500 ring-1 ring-slate-950 animate-pulse"></span>
+              </button>
+
+              {/* Invisible hover bridge (pt-1) wrapping the glass-panel */}
+              <div className="absolute right-0 top-full pt-1 w-72 opacity-0 scale-95 group-hover:opacity-100 group-hover:scale-100 pointer-events-none group-hover:pointer-events-auto transition-all duration-200 z-50">
+                <div className="glass-panel p-4 rounded-xl shadow-2xl">
+                  <div className="flex items-center justify-between mb-3">
+                    <h4 className="text-[10px] font-extrabold text-white uppercase tracking-widest">{t("updateTitle")}</h4>
+                    <span className="px-1.5 py-0.5 rounded-full bg-violet-600/25 border border-violet-500/20 text-[8px] font-bold text-violet-400 font-mono">
+                      v1.2.0
+                    </span>
+                  </div>
+                  <ul className="space-y-2 text-[10px] text-slate-350 leading-relaxed font-sans">
+                    <li className="flex items-start gap-2">
+                      <span className="h-1 w-1 rounded-full bg-violet-400 mt-1.5 flex-shrink-0"></span>
+                      <span>{t("updateLog1")}</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="h-1 w-1 rounded-full bg-violet-400 mt-1.5 flex-shrink-0"></span>
+                      <span>{t("updateLog2")}</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="h-1 w-1 rounded-full bg-violet-400 mt-1.5 flex-shrink-0"></span>
+                      <span>{t("updateLog3")}</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="h-1 w-1 rounded-full bg-violet-400 mt-1.5 flex-shrink-0"></span>
+                      <span>{t("updateLog4")}</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="h-1 w-1 rounded-full bg-violet-400 mt-1.5 flex-shrink-0"></span>
+                      <span>{t("updateLog5")}</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
             {/* Desktop Extension Download Button */}
             <div className="hidden md:block">
               <a
@@ -406,6 +488,45 @@ export default function App() {
                 </button>
               );
             })}
+
+            {/* Mobile Notification Button */}
+            <button
+              onClick={() => setShowUpdates(!showUpdates)}
+              className="w-full inline-flex items-center justify-between px-4 py-2.5 rounded-xl text-xs font-bold transition-all border border-white/10 glass-card text-slate-300 cursor-pointer"
+            >
+              <span className="flex items-center gap-2">
+                <Bell className="w-4 h-4 text-violet-400" />
+                <span>{t("updateTitle")}</span>
+              </span>
+              <span className="px-2 py-0.5 rounded bg-violet-600/25 border border-violet-500/20 text-[9px] font-mono font-bold text-violet-400">v1.2.0</span>
+            </button>
+
+            {/* Mobile Updates Expansion */}
+            {showUpdates && (
+              <div className="mx-2 p-3.5 rounded-xl border border-white/5 bg-slate-950/40 space-y-2 animate-fadeIn">
+                <p className="text-[10px] text-slate-350 flex items-start gap-2">
+                  <span className="h-1 w-1 rounded-full bg-violet-400 mt-1.5 flex-shrink-0"></span>
+                  <span>{t("updateLog1")}</span>
+                </p>
+                <p className="text-[10px] text-slate-350 flex items-start gap-2">
+                  <span className="h-1 w-1 rounded-full bg-violet-400 mt-1.5 flex-shrink-0"></span>
+                  <span>{t("updateLog2")}</span>
+                </p>
+                <p className="text-[10px] text-slate-350 flex items-start gap-2">
+                  <span className="h-1 w-1 rounded-full bg-violet-400 mt-1.5 flex-shrink-0"></span>
+                  <span>{t("updateLog3")}</span>
+                </p>
+                <p className="text-[10px] text-slate-350 flex items-start gap-2">
+                  <span className="h-1 w-1 rounded-full bg-violet-400 mt-1.5 flex-shrink-0"></span>
+                  <span>{t("updateLog4")}</span>
+                </p>
+                <p className="text-[10px] text-slate-350 flex items-start gap-2">
+                  <span className="h-1 w-1 rounded-full bg-violet-400 mt-1.5 flex-shrink-0"></span>
+                  <span>{t("updateLog5")}</span>
+                </p>
+              </div>
+            )}
+
             <a
               href="/downloader-extension.zip"
               download="downloader-extension.zip"
@@ -430,7 +551,7 @@ export default function App() {
             </div>
 
             {/* Inner Dashboard Extraction Navigation tabs */}
-            <div className="flex border-b border-slate-800/85 pb-0.5">
+            <div className="flex pb-0.5">
               <button
                 onClick={() => setActiveTab("single")}
                 className={`px-5 py-3 border-b-2 text-sm font-semibold tracking-wide transition-all cursor-pointer ${
@@ -514,7 +635,7 @@ export default function App() {
                   {videoData && (
                     <div className="glass-panel p-6 rounded-2xl space-y-6">
                       {/* Video info card */}
-                      <div className="flex flex-col md:flex-row gap-5 pb-6 border-b border-white/10">
+                      <div className="flex flex-col md:flex-row gap-5 pb-6">
                         <div className="relative group w-full md:w-60 aspect-video bg-slate-950 rounded-xl overflow-hidden flex-shrink-0">
                           <img
                             src={videoData.thumbnail || "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=400"}
@@ -1291,12 +1412,6 @@ Content-Disposition: attachment; filename="..."`}
               <p className="text-xs text-slate-400 leading-relaxed">
                 {t("footerBrandDesc")}
               </p>
-              <div className="pt-2">
-                <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full border border-emerald-500/25 bg-emerald-500/10 text-emerald-400 text-[10px] font-bold font-mono">
-                  <span className="h-1.5 w-1.5 rounded-full bg-emerald-400"></span>
-                  {t("statusOperational")}
-                </span>
-              </div>
             </div>
 
             {/* Column 2: Product features */}
@@ -1409,9 +1524,29 @@ Content-Disposition: attachment; filename="..."`}
           </div>
 
           <div className="mt-6 pt-5 border-t border-white/5 flex flex-col sm:flex-row items-center justify-between gap-4">
-            <p className="text-[10px] text-slate-500 text-center sm:text-left leading-normal">
-              {t("footerCopyright")}
-            </p>
+            <div className="flex flex-col sm:flex-row items-center gap-3">
+              <p className="text-[10px] text-slate-500 text-center sm:text-left leading-normal">
+                {t("footerCopyright")}
+              </p>
+              <span className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full border border-white/5 bg-slate-950/40 text-[9px] font-bold font-mono">
+                {apiStatus === "online" ? (
+                  <>
+                    <span className="h-1.5 w-1.5 rounded-full bg-emerald-500 animate-pulse"></span>
+                    <span className="text-emerald-400">{t("statusOperational")} ({latency}ms)</span>
+                  </>
+                ) : apiStatus === "checking" ? (
+                  <>
+                    <span className="h-1.5 w-1.5 rounded-full bg-amber-500 animate-bounce"></span>
+                    <span className="text-amber-400">{t("statusChecking")}</span>
+                  </>
+                ) : (
+                  <>
+                    <span className="h-1.5 w-1.5 rounded-full bg-rose-500"></span>
+                    <span className="text-rose-400">{t("statusOffline")}</span>
+                  </>
+                )}
+              </span>
+            </div>
             <div className="flex items-center gap-4 text-slate-500">
               <a
                 href="https://github.com"
