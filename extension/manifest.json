@@ -1,0 +1,28 @@
+{
+  "manifest_version": 3,
+  "name": "GenDownload Helper",
+  "version": "1.0.0",
+  "description": "Quick video/audio downloader and companion extension for the Downloader Web Application.",
+  "permissions": [
+    "activeTab",
+    "contextMenus",
+    "scripting",
+    "tabs"
+  ],
+  "host_permissions": [
+    "https://gendownload.com/*",
+    "http://localhost/*"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": "icon.png"
+  },
+  "icons": {
+    "16": "icon.png",
+    "48": "icon.png",
+    "128": "icon.png"
+  }
+}

@@ -1,0 +1,33 @@
+# Downloader Project Checklist
+
+- [x] Initialize React Vite web application (`web/`)
+  - [x] Run `npx create-vite` to bootstrap the React project
+  - [x] Install Tailwind CSS, Autoprefixer, and Lucide React
+  - [x] Configure Tailwind CSS in Vite and styles in `src/index.css`
+  - [x] Implement the core App layout and styling in `App.jsx`
+  - [x] Implement the "Single Video" extractor feature
+  - [x] Implement the "Channel & Playlists" browser feature
+  - [x] Implement the "Bulk ZIP" downloader feature
+  - [x] Implement the window message listener for extension integration
+- [x] Initialize the Chrome Extension (`extension/`)
+  - [x] Create `manifest.json` (Manifest V3)
+  - [x] Create `popup.html` and `popup.js` for the compact popup interface
+  - [x] Create `background.js` for context menus and page integration
+  - [x] Generate extension icons
+- [x] Sidebar Restructuring & Pages
+  - [x] Implement responsive sidebar navigation (with mobile slider)
+  - [x] Add content pages: Why Downloader, How to Use, FAQs, API Docs
+  - [x] Bundle extension into a functional `.zip` file for web downloads
+- [x] Layout Optimization
+  - [x] Transition vertical Left Sidebar navigation to horizontal Top Navigation Bar
+  - [x] Implement responsive hamburger dropdown menu for mobile devices
+- [x] Advanced 3D Effects Integration
+  - [x] Install Three.js package
+  - [x] Create `ThreeBg.jsx` canvas component with 3D particle network
+  - [x] Add mouse-move parallax lerp sway animation
+  - [x] Optimize timers to eliminate deprecation console warnings
+  - [x] Integrate background canvas into layout without blocking clicks
+- [x] Verification and Testing
+  - [x] Run web app locally and test extraction APIs
+  - [x] Validate production building
+  - [x] Create walkthrough and verification instructions
