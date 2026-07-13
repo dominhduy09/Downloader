@@ -868,7 +868,7 @@ export default function App() {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               {/* Web interface steps */}
               <div className="space-y-4">
-                <h3 className="text-md font-bold text-white border-b border-white/10 pb-3 flex items-center gap-2">
+                <h3 className="text-md font-bold text-white pb-1 flex items-center gap-2">
                   <span className="p-1 rounded bg-violet-500/10 text-violet-400 text-xs font-mono font-bold">WEB</span>
                   {t("howWebTitle")}
                 </h3>
@@ -901,7 +901,7 @@ export default function App() {
 
               {/* Extension steps */}
               <div className="space-y-4">
-                <h3 className="text-md font-bold text-white border-b border-white/10 pb-3 flex items-center gap-2">
+                <h3 className="text-md font-bold text-white pb-1 flex items-center gap-2">
                   <span className="p-1 rounded bg-violet-500/10 text-violet-400 text-xs font-mono font-bold">EXT</span>
                   {t("howExtTitle")}
                 </h3>
@@ -981,7 +981,7 @@ export default function App() {
 
             {/* ENDPOINT 1 */}
             <div className="space-y-4">
-              <h3 className="text-md font-bold text-white border-b border-slate-800/80 pb-3 flex items-center gap-3">
+              <h3 className="text-md font-bold text-white flex items-center gap-3">
                 <span className="px-2 py-0.5 rounded bg-emerald-500/10 text-emerald-400 text-[10px] font-bold font-mono">POST</span>
                 <span className="font-mono text-sm">/api/extract</span>
               </h3>
@@ -989,24 +989,26 @@ export default function App() {
               
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
                 <div className="space-y-4">
-                  <div className="space-y-2.5">
+                  <div className="space-y-2">
                     <h4 className="text-xs font-bold text-slate-400 uppercase tracking-widest">{t("apiSchema")}</h4>
-                    <table className="w-full text-xs text-slate-400 border border-white/10 rounded-xl overflow-hidden">
-                      <thead>
-                        <tr className="bg-slate-900 text-slate-300 text-left border-b border-white/10 font-bold">
-                          <th className="p-3">{t("apiField")}</th>
-                          <th className="p-3">{t("apiType")}</th>
-                          <th className="p-3 text-right">{t("apiRequired")}</th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        <tr className="border-b border-white/10">
-                          <td className="p-3 font-mono text-violet-400">url</td>
-                          <td className="p-3">string</td>
-                          <td className="p-3 text-right text-emerald-400 font-semibold">{t("apiRequired")}</td>
-                        </tr>
-                      </tbody>
-                    </table>
+                    <div className="bg-slate-950 p-4 rounded-xl border border-white/10 overflow-x-auto">
+                      <table className="w-full text-xs text-slate-300 border-collapse">
+                        <thead>
+                          <tr className="text-slate-400 text-left border-b border-white/5 font-bold">
+                            <th className="pb-3 pr-4">{t("apiField")}</th>
+                            <th className="pb-3 pr-4">{t("apiType")}</th>
+                            <th className="pb-3 text-right">{t("apiRequired")}</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td className="pt-3 pr-4 font-mono text-violet-400">url</td>
+                            <td className="pt-3 pr-4 text-slate-350">string</td>
+                            <td className="pt-3 text-right text-emerald-400 font-semibold">{t("apiRequired")}</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
                   </div>
                 </div>
 
@@ -1054,8 +1056,8 @@ export default function App() {
             </div>
 
             {/* ENDPOINT 2 */}
-            <div className="space-y-4 pt-4 border-t border-slate-900">
-              <h3 className="text-md font-bold text-white border-b border-slate-800 pb-3 flex items-center gap-3">
+            <div className="space-y-4 pt-6">
+              <h3 className="text-md font-bold text-white flex items-center gap-3">
                 <span className="px-2 py-0.5 rounded bg-emerald-500/10 text-emerald-400 text-[10px] font-bold font-mono">POST</span>
                 <span className="font-mono text-sm">/api/channel</span>
               </h3>
@@ -1063,29 +1065,31 @@ export default function App() {
 
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
                 <div className="space-y-4">
-                  <div className="space-y-2.5">
+                  <div className="space-y-2">
                     <h4 className="text-xs font-bold text-slate-400 uppercase tracking-widest">{t("apiSchema")}</h4>
-                    <table className="w-full text-xs text-slate-400 border border-white/10 rounded-xl overflow-hidden">
-                      <thead>
-                        <tr className="bg-slate-900 text-slate-300 text-left border-b border-white/10 font-bold">
-                          <th className="p-3">{t("apiField")}</th>
-                          <th className="p-3">{t("apiType")}</th>
-                          <th className="p-3 text-right">{t("apiRequired")}</th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        <tr className="border-b border-white/10">
-                          <td className="p-3 font-mono text-violet-400">url</td>
-                          <td className="p-3">string</td>
-                          <td className="p-3 text-right text-emerald-400 font-semibold">{t("apiRequired")}</td>
-                        </tr>
-                        <tr>
-                          <td className="p-3 font-mono text-violet-400">limit</td>
-                          <td className="p-3">number</td>
-                          <td className="p-3 text-right text-slate-500">No (default 30)</td>
-                        </tr>
-                      </tbody>
-                    </table>
+                    <div className="bg-slate-950 p-4 rounded-xl border border-white/10 overflow-x-auto">
+                      <table className="w-full text-xs text-slate-300 border-collapse">
+                        <thead>
+                          <tr className="text-slate-400 text-left border-b border-white/5 font-bold">
+                            <th className="pb-3 pr-4">{t("apiField")}</th>
+                            <th className="pb-3 pr-4">{t("apiType")}</th>
+                            <th className="pb-3 text-right">{t("apiRequired")}</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr className="border-b border-white/5">
+                            <td className="py-3 pr-4 font-mono text-violet-400">url</td>
+                            <td className="py-3 pr-4 text-slate-350">string</td>
+                            <td className="py-3 text-right text-emerald-400 font-semibold">{t("apiRequired")}</td>
+                          </tr>
+                          <tr>
+                            <td className="pt-3 pr-4 font-mono text-violet-400">limit</td>
+                            <td className="pt-3 pr-4 text-slate-350">number</td>
+                            <td className="pt-3 text-right text-slate-500">No (default 30)</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
                   </div>
                 </div>
 
@@ -1120,8 +1124,8 @@ export default function App() {
             </div>
 
             {/* ENDPOINT 3 */}
-            <div className="space-y-4 pt-4 border-t border-slate-900">
-              <h3 className="text-md font-bold text-white border-b border-slate-800 pb-3 flex items-center gap-3">
+            <div className="space-y-4 pt-6">
+              <h3 className="text-md font-bold text-white flex items-center gap-3">
                 <span className="px-2 py-0.5 rounded bg-emerald-500/10 text-emerald-400 text-[10px] font-bold font-mono">POST</span>
                 <span className="font-mono text-sm">/api/zip</span>
               </h3>
@@ -1129,29 +1133,31 @@ export default function App() {
 
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
                 <div className="space-y-4">
-                  <div className="space-y-2.5">
+                  <div className="space-y-2">
                     <h4 className="text-xs font-bold text-slate-400 uppercase tracking-widest">{t("apiSchema")}</h4>
-                    <table className="w-full text-xs text-slate-400 border border-white/10 rounded-xl overflow-hidden">
-                      <thead>
-                        <tr className="bg-slate-900 text-slate-300 text-left border-b border-white/10 font-bold">
-                          <th className="p-3">{t("apiField")}</th>
-                          <th className="p-3">{t("apiType")}</th>
-                          <th className="p-3 text-right">{t("apiRequired")}</th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        <tr className="border-b border-white/10">
-                          <td className="p-3 font-mono text-violet-400">urls</td>
-                          <td className="p-3">string[]</td>
-                          <td className="p-3 text-right text-emerald-400 font-semibold">{t("apiRequired")}</td>
-                        </tr>
-                        <tr>
-                          <td className="p-3 font-mono text-violet-400">quality</td>
-                          <td className="p-3">string</td>
-                          <td className="p-3 text-right text-slate-500 font-normal">No ('best' / 'audio' / '720')</td>
-                        </tr>
-                      </tbody>
-                    </table>
+                    <div className="bg-slate-950 p-4 rounded-xl border border-white/10 overflow-x-auto">
+                      <table className="w-full text-xs text-slate-300 border-collapse">
+                        <thead>
+                          <tr className="text-slate-400 text-left border-b border-white/5 font-bold">
+                            <th className="pb-3 pr-4">{t("apiField")}</th>
+                            <th className="pb-3 pr-4">{t("apiType")}</th>
+                            <th className="pb-3 text-right">{t("apiRequired")}</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr className="border-b border-white/5">
+                            <td className="py-3 pr-4 font-mono text-violet-400">urls</td>
+                            <td className="py-3 pr-4 text-slate-350">string[]</td>
+                            <td className="py-3 text-right text-emerald-400 font-semibold">{t("apiRequired")}</td>
+                          </tr>
+                          <tr>
+                            <td className="pt-3 pr-4 font-mono text-violet-400">quality</td>
+                            <td className="pt-3 pr-4 text-slate-350">string</td>
+                            <td className="pt-3 text-right text-slate-500 font-normal">No ('best' / 'audio' / '720')</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
                   </div>
                 </div>
 
@@ -1179,8 +1185,8 @@ export default function App() {
             </div>
 
             {/* ENDPOINT 4 */}
-            <div className="space-y-4 pt-4 border-t border-slate-900">
-              <h3 className="text-md font-bold text-white border-b border-slate-800 pb-3 flex items-center gap-3">
+            <div className="space-y-4 pt-6">
+              <h3 className="text-md font-bold text-white flex items-center gap-3">
                 <span className="px-2 py-0.5 rounded bg-blue-500/10 text-blue-400 text-[10px] font-bold font-mono">GET</span>
                 <span className="font-mono text-sm">/api/stream</span>
               </h3>
@@ -1188,29 +1194,31 @@ export default function App() {
 
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
                 <div className="space-y-4">
-                  <div className="space-y-2.5">
+                  <div className="space-y-2">
                     <h4 className="text-xs font-bold text-slate-400 uppercase tracking-widest">{t("apiQueryParameters")}</h4>
-                    <table className="w-full text-xs text-slate-400 border border-white/10 rounded-xl overflow-hidden">
-                      <thead>
-                        <tr className="bg-slate-900 text-slate-300 text-left border-b border-white/10 font-bold">
-                          <th className="p-3">{t("apiField")}</th>
-                          <th className="p-3">{t("apiType")}</th>
-                          <th className="p-3 text-right">{t("apiRequired")}</th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        <tr className="border-b border-white/10">
-                          <td className="p-3 font-mono text-violet-400">t</td>
-                          <td className="p-3">string (token)</td>
-                          <td className="p-3 text-right text-emerald-400 font-semibold">{t("apiRequired")}</td>
-                        </tr>
-                        <tr>
-                          <td className="p-3 font-mono text-violet-400">i</td>
-                          <td className="p-3">number (index)</td>
-                          <td className="p-3 text-right text-emerald-400 font-semibold">{t("apiRequired")}</td>
-                        </tr>
-                      </tbody>
-                    </table>
+                    <div className="bg-slate-950 p-4 rounded-xl border border-white/10 overflow-x-auto">
+                      <table className="w-full text-xs text-slate-300 border-collapse">
+                        <thead>
+                          <tr className="text-slate-400 text-left border-b border-white/5 font-bold">
+                            <th className="pb-3 pr-4">{t("apiField")}</th>
+                            <th className="pb-3 pr-4">{t("apiType")}</th>
+                            <th className="pb-3 text-right">{t("apiRequired")}</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr className="border-b border-white/5">
+                            <td className="py-3 pr-4 font-mono text-violet-400">t</td>
+                            <td className="py-3 pr-4 text-slate-350">string (token)</td>
+                            <td className="py-3 text-right text-emerald-400 font-semibold">{t("apiRequired")}</td>
+                          </tr>
+                          <tr>
+                            <td className="pt-3 pr-4 font-mono text-violet-400">i</td>
+                            <td className="pt-3 pr-4 text-slate-350">number (index)</td>
+                            <td className="pt-3 text-right text-emerald-400 font-semibold">{t("apiRequired")}</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
                   </div>
                 </div>
 
@@ -1234,8 +1242,8 @@ Content-Disposition: attachment; filename="..."`}
             </div>
 
             {/* ENDPOINT 5 */}
-            <div className="space-y-4 pt-4 border-t border-slate-900">
-              <h3 className="text-md font-bold text-white border-b border-slate-800 pb-3 flex items-center gap-3">
+            <div className="space-y-4 pt-6">
+              <h3 className="text-md font-bold text-white flex items-center gap-3">
                 <span className="px-2 py-0.5 rounded bg-blue-500/10 text-blue-400 text-[10px] font-bold font-mono">GET</span>
                 <span className="font-mono text-sm">/api/health</span>
               </h3>
@@ -1269,7 +1277,7 @@ Content-Disposition: attachment; filename="..."`}
 
       {/* Premium Footer */}
       <footer className="w-full footer-glass-dark z-10">
-        <div className="max-w-6xl mx-auto px-6 py-12 md:py-16">
+        <div className="max-w-6xl mx-auto px-6 py-6 md:py-8">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8 md:gap-12">
             
             {/* Column 1: Brand details */}
@@ -1400,7 +1408,7 @@ Content-Disposition: attachment; filename="..."`}
 
           </div>
 
-          <div className="mt-12 pt-8 border-t border-slate-800 flex flex-col sm:flex-row items-center justify-between gap-4">
+          <div className="mt-6 pt-5 border-t border-white/5 flex flex-col sm:flex-row items-center justify-between gap-4">
             <p className="text-[10px] text-slate-500 text-center sm:text-left leading-normal">
               {t("footerCopyright")}
             </p>

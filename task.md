@@ -26,6 +26,9 @@
   - [x] Remove the Home screen promo banner and align headers across all pages
   - [x] Resolve language switcher dropdown hover-gaps and implement glassmorphic buttons
   - [x] Replace non-standard slate-850 divider classes with consistent border colors
+  - [x] Compact footer spacing and container size
+  - [x] Format Request Body Schema and Query Parameters tables inside code-block boxes
+  - [x] Remove header underlines and top borders to clean layout line clutter
 - [x] Advanced 3D Effects Integration
   - [x] Install Three.js package
   - [x] Create `ThreeBg.jsx` canvas component with 3D particle network
