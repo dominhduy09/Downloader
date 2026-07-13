@@ -41,6 +41,9 @@
   - [x] Wrap application in main.jsx
   - [x] Map translation lookup t() functions across all text strings and tabs in App.jsx
   - [x] Integrate a responsive language selector dropdown in the top navbar
+- [x] Vercel Deployment Configuration
+  - [x] Create vercel.json in the web folder configuring rewrites rules for single page routing
+  - [x] Wrote a step-by-step Vercel Deployment Guide file at the project root
 - [x] Verification and Testing
   - [x] Run web app locally and test extraction APIs
   - [x] Validate production building
