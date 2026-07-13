@@ -23,12 +23,21 @@
   - [x] Implement responsive hamburger dropdown menu for mobile devices
   - [x] Create a premium multi-column horizontal footer with active state-driven routing
   - [x] Implement custom frosted dewy glassmorphism theme parameters for cards, topbar, and footer
+  - [x] Remove the Home screen promo banner and align headers across all pages
+  - [x] Resolve language switcher dropdown hover-gaps and implement glassmorphic buttons
+  - [x] Replace non-standard slate-850 divider classes with consistent border colors
 - [x] Advanced 3D Effects Integration
   - [x] Install Three.js package
   - [x] Create `ThreeBg.jsx` canvas component with 3D particle network
   - [x] Add mouse-move parallax lerp sway animation
   - [x] Optimize timers to eliminate deprecation console warnings
   - [x] Integrate background canvas into layout without blocking clicks
+- [x] Internationalization (i18n) System
+  - [x] Create translations dictionary for EN, ES, VI, FR, JA (`translations.js`)
+  - [x] Set up React context provider and useLanguage hook (`LanguageContext.jsx`)
+  - [x] Wrap application in main.jsx
+  - [x] Map translation lookup t() functions across all text strings and tabs in App.jsx
+  - [x] Integrate a responsive language selector dropdown in the top navbar
 - [x] Verification and Testing
   - [x] Run web app locally and test extraction APIs
   - [x] Validate production building
