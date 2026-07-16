@@ -1,4 +1,4 @@
-const WEB_APP_URL = "http://localhost:5173/";
+const WEB_APP_URL = "https://downloader-topaz-eta.vercel.app/";
 
 // Create the context menu item when extension is installed
 chrome.runtime.onInstalled.addListener(() => {
@@ -23,14 +23,16 @@ chrome.contextMenus.onClicked.addListener((info, tab) => {
 chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
   if (message.action === "send_url") {
     sendUrlToWeb(message.url);
+    sendResponse({ received: true });
   }
+  return true;
 });
 
 // Helper function to send the URL to the Web App tab
 function sendUrlToWeb(url) {
   chrome.tabs.query({}, (tabs) => {
-    // Find a tab that matches the web app URL
-    const existingTab = tabs.find(t => t.url && t.url.startsWith("http://localhost:5173"));
+    // Find a tab that matches the web app URL (either local development or production deploy)
+    const existingTab = tabs.find(t => t.url && (t.url.startsWith("http://localhost:5173") || t.url.startsWith("https://downloader-topaz-eta.vercel.app")));
 
     if (existingTab) {
       // Focus the window and the tab
@@ -40,21 +42,32 @@ function sendUrlToWeb(url) {
         executeSendMessage(existingTab.id, url);
       });
     } else {
-      // Open web app in a new tab
-      chrome.tabs.create({ url: WEB_APP_URL }, (newTab) => {
-        const listener = (tabId, changeInfo) => {
-          if (tabId === newTab.id && changeInfo.status === "complete") {
-            // Remove the listener once loaded
-            chrome.tabs.onUpdated.removeListener(listener);
-            // Give React app a short window (600ms) to mount event listeners
-            setTimeout(() => {
-              executeSendMessage(newTab.id, url);
-            }, 600);
-          }
-        };
-        chrome.tabs.onUpdated.addListener(listener);
-      });
+      // Probe if localhost:5173 dev server is running
+      fetch("http://localhost:5173/", { method: "HEAD", mode: "no-cors" })
+        .then(() => {
+          openNewTab("http://localhost:5173/", url);
+        })
+        .catch(() => {
+          openNewTab("https://downloader-topaz-eta.vercel.app/", url);
+        });
     }
+  });
+}
+
+// Helper to open a new tab and pipe url on load complete
+function openNewTab(targetUrl, url) {
+  chrome.tabs.create({ url: targetUrl }, (newTab) => {
+    const listener = (tabId, changeInfo) => {
+      if (tabId === newTab.id && changeInfo.status === "complete") {
+        // Remove the listener once loaded
+        chrome.tabs.onUpdated.removeListener(listener);
+        // Give React app a short window (600ms) to mount event listeners
+        setTimeout(() => {
+          executeSendMessage(newTab.id, url);
+        }, 600);
+      }
+    };
+    chrome.tabs.onUpdated.addListener(listener);
   });
 }
 

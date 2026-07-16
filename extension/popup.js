@@ -119,8 +119,13 @@ document.addEventListener("DOMContentLoaded", () => {
   // Action 2: Open in Web App and send URL
   btnOpenWeb.addEventListener("click", () => {
     if (!currentUrl) return;
-    chrome.runtime.sendMessage({ action: "send_url", url: currentUrl });
-    window.close(); // Close the popup window
+    btnOpenWeb.disabled = true; // Prevent double clicks
+    chrome.runtime.sendMessage({ action: "send_url", url: currentUrl }, () => {
+      // Allow service worker to process message fully before closing popup window
+      setTimeout(() => {
+        window.close();
+      }, 100);
+    });
   });
 
   // Helper to format bytes to human readable form

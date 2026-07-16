@@ -11,7 +11,8 @@
   ],
   "host_permissions": [
     "https://gendownload.com/*",
-    "http://localhost/*"
+    "http://localhost/*",
+    "https://downloader-topaz-eta.vercel.app/*"
   ],
   "background": {
     "service_worker": "background.js"

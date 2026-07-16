@@ -55,6 +55,9 @@
   - [x] Update the extension manager dashboard card icon (icon.png) to match brand logo
   - [x] Convert generated JPEG asset to natively formatted PNG file using sips
   - [x] Ensure extension manager logo uses a solid, fully-filled violet background
+  - [x] Map background routing parameters and host permissions to point to Vercel URL
+  - [x] Implement dynamic local/Vercel active server connectivity check and fallback routing
+  - [x] Resolve popup closing race conditions that caused double click requirements
   - [x] Re-zip extension directory and update the web public folder package asset
 - [x] Verification and Testing
   - [x] Run web app locally and test extraction APIs
