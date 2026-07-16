@@ -54,6 +54,7 @@
   - [x] Replicate the website's brand logo header container layout and font logo text style
   - [x] Update the extension manager dashboard card icon (icon.png) to match brand logo
   - [x] Convert generated JPEG asset to natively formatted PNG file using sips
+  - [x] Ensure extension manager logo uses a solid, fully-filled violet background
   - [x] Re-zip extension directory and update the web public folder package asset
 - [x] Verification and Testing
   - [x] Run web app locally and test extraction APIs
