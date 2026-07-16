@@ -33,6 +33,7 @@
   - [x] Add application update notifications button, glass card, and translation keys
   - [x] Adapt notification trigger mechanics to be hover-group reactive
   - [x] Remove visual rule line dividers from Home dashboard views and update notification popover
+  - [x] Update GitHub footer links to repository and replace Twitter icon with Chrome Web Store icon
 - [x] Advanced 3D Effects Integration
   - [x] Install Three.js package
   - [x] Create `ThreeBg.jsx` canvas component with 3D particle network
