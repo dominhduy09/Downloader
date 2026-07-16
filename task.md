@@ -60,6 +60,8 @@
   - [x] Implement dynamic local/Vercel active server connectivity check and fallback routing
   - [x] Resolve popup closing race conditions that caused double click requirements
   - [x] Re-zip extension directory and update the web public folder package asset
+- [x] Project Documentation
+  - [x] Create detailed, premium README.md in workspace root outlining web application and Chrome extension features
 - [x] Verification and Testing
   - [x] Run web app locally and test extraction APIs
   - [x] Validate production building
