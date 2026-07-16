@@ -13,8 +13,6 @@
   - [x] Create `popup.html` and `popup.js` for the compact popup interface
   - [x] Create `background.js` for context menus and page integration
   - [x] Generate extension icons
-  - [x] Rename extension and align styles with the dewy glassmorphism web style
-  - [x] Compile extension files into a public zip archive
 - [x] Sidebar Restructuring & Pages
   - [x] Implement responsive sidebar navigation (with mobile slider)
   - [x] Add content pages: Why Downloader, How to Use, FAQs, API Docs
@@ -50,6 +48,11 @@
 - [x] Vercel Deployment Configuration
   - [x] Create vercel.json in the web folder configuring rewrites rules for single page routing
   - [x] Wrote a step-by-step Vercel Deployment Guide file at the project root
+- [x] Chrome Extension Style Alignment
+  - [x] Map style foundations CSS tokens (Inter font stack, spacing, borders, radius)
+  - [x] Align button borders, hover translations, shadows, and spacing rules
+  - [x] Replicate the website's brand logo header container layout and font logo text style
+  - [x] Re-zip extension directory and update the web public folder package asset
 - [x] Verification and Testing
   - [x] Run web app locally and test extraction APIs
   - [x] Validate production building
