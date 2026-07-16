@@ -52,6 +52,8 @@
   - [x] Map style foundations CSS tokens (Inter font stack, spacing, borders, radius)
   - [x] Align button borders, hover translations, shadows, and spacing rules
   - [x] Replicate the website's brand logo header container layout and font logo text style
+  - [x] Update the extension manager dashboard card icon (icon.png) to match brand logo
+  - [x] Convert generated JPEG asset to natively formatted PNG file using sips
   - [x] Re-zip extension directory and update the web public folder package asset
 - [x] Verification and Testing
   - [x] Run web app locally and test extraction APIs
