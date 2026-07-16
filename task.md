@@ -62,6 +62,8 @@
   - [x] Re-zip extension directory and update the web public folder package asset
 - [x] Project Documentation
   - [x] Create detailed, premium README.md in workspace root outlining web application and Chrome extension features
+  - [x] Create CONTRIBUTING.md file in workspace root with contribution code guidelines
+  - [x] Create LICENSE file in workspace root declaring MIT license protection
 - [x] Verification and Testing
   - [x] Run web app locally and test extraction APIs
   - [x] Validate production building

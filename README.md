@@ -168,7 +168,7 @@ To deploy to Vercel, push the repository to GitHub, link it on your Vercel Dashb
 
 ## 🤝 Contributing
 
-Contributions are welcome! Please feel free to open pull requests or submit issues for features and bug reports.
+Contributions are welcome! Please read the [CONTRIBUTING.md](CONTRIBUTING.md) for details on our code of conduct, development setup, and process for submitting pull requests.
 
 ---
 
