@@ -3,18 +3,20 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>GenDownload Helper</title>
+  <title>Downloader</title>
   <style>
     :root {
-      --bg: #0b0f19;
-      --card-bg: #111827;
-      --border: #1f2937;
-      --text: #f3f4f6;
-      --text-muted: #9ca3af;
-      --accent: #8b5cf6;
-      --accent-hover: #7c3aed;
-      --danger: #ef4444;
-      --success: #10b981;
+      --bg-gradient: radial-gradient(circle at top left, #1e1b4b 0%, #0f172a 40%, #020617 100%);
+      --glass-bg: rgba(15, 23, 42, 0.65);
+      --glass-border: rgba(255, 255, 255, 0.1);
+      --text: #f8fafc;
+      --text-muted: #94a3b8;
+      --accent: #a78bfa; /* violet-400 */
+      --accent-hover: #c084fc; /* purple-400 */
+      --danger: #f87171;
+      --success: #34d399;
+      --inner-glow: inset 0 1px 1px rgba(255, 255, 255, 0.15);
+      --shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.5);
     }
 
     * {
@@ -24,56 +26,64 @@
     }
 
     body {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-      background-color: var(--bg);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background: var(--bg-gradient);
       color: var(--text);
       width: 360px;
-      padding: 16px;
-      font-size: 14px;
+      padding: 18px;
+      font-size: 13.5px;
       overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
     }
 
     .header {
       display: flex;
       align-items: center;
-      gap: 8px;
-      margin-bottom: 16px;
-      border-bottom: 1px solid var(--border);
-      padding-bottom: 12px;
+      gap: 10px;
+      margin-bottom: 18px;
+      border-bottom: 1px solid var(--glass-border);
+      padding-bottom: 14px;
     }
 
     .header svg {
       color: var(--accent);
+      filter: drop-shadow(0 0 6px rgba(167, 139, 250, 0.4));
     }
 
     .title {
       font-size: 16px;
-      font-weight: 600;
-      letter-spacing: -0.025em;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      background: linear-gradient(135deg, #ffffff 0%, #cbd5e1 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
     }
 
     .url-preview-container {
-      background-color: var(--card-bg);
-      border: 1px solid var(--border);
-      border-radius: 8px;
-      padding: 10px;
-      margin-bottom: 16px;
+      background: var(--glass-bg);
+      border: 1px solid var(--glass-border);
+      box-shadow: var(--inner-glow), var(--shadow);
+      backdrop-filter: blur(15px);
+      -webkit-backdrop-filter: blur(15px);
+      border-radius: 12px;
+      padding: 12px;
+      margin-bottom: 18px;
       display: flex;
       flex-direction: column;
-      gap: 4px;
+      gap: 5px;
     }
 
     .url-label {
-      font-size: 11px;
+      font-size: 10px;
       text-transform: uppercase;
       letter-spacing: 0.05em;
       color: var(--text-muted);
-      font-weight: 500;
+      font-weight: 700;
     }
 
     .url-text {
       font-family: monospace;
-      font-size: 12px;
+      font-size: 11.5px;
       color: var(--accent);
       white-space: nowrap;
       overflow: hidden;
@@ -92,49 +102,73 @@
       align-items: center;
       justify-content: center;
       gap: 8px;
-      padding: 10px 16px;
-      border-radius: 8px;
-      font-weight: 500;
+      padding: 11px 16px;
+      border-radius: 12px;
+      font-weight: 700;
       cursor: pointer;
-      transition: all 0.2s ease;
+      transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
       border: 1px solid transparent;
-      font-size: 13.5px;
+      font-size: 13px;
       width: 100%;
     }
 
-    .btn-primary {
-      background-color: var(--accent);
-      color: white;
+    .btn:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
     }
 
-    .btn-primary:hover {
-      background-color: var(--accent-hover);
+    .btn-primary {
+      background: linear-gradient(135deg, #8b5cf6 0%, #6d28d9 100%);
+      color: white;
+      box-shadow: 0 4px 14px 0 rgba(139, 92, 246, 0.3);
+    }
+
+    .btn-primary:not(:disabled):hover {
+      background: linear-gradient(135deg, #a78bfa 0%, #7c3aed 100%);
+      transform: translateY(-1px);
+      box-shadow: 0 6px 20px 0 rgba(139, 92, 246, 0.4);
+    }
+
+    .btn-primary:not(:disabled):active {
+      transform: translateY(0);
     }
 
     .btn-secondary {
-      background-color: transparent;
-      border-color: var(--border);
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid var(--glass-border);
       color: var(--text);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      box-shadow: var(--inner-glow);
     }
 
-    .btn-secondary:hover {
-      background-color: rgba(255, 255, 255, 0.05);
-      border-color: var(--text-muted);
+    .btn-secondary:not(:disabled):hover {
+      background: rgba(255, 255, 255, 0.08);
+      border-color: rgba(255, 255, 255, 0.2);
+      transform: translateY(-1px);
+    }
+
+    .btn-secondary:not(:disabled):active {
+      transform: translateY(0);
     }
 
     .status-container {
-      margin-top: 12px;
+      margin-top: 14px;
       display: none;
+      background: rgba(255, 255, 255, 0.02);
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      border-radius: 12px;
+      padding: 12px;
     }
 
     .spinner {
-      border: 3px solid rgba(255, 255, 255, 0.1);
-      width: 24px;
-      height: 24px;
+      border: 2px solid rgba(255, 255, 255, 0.05);
+      width: 22px;
+      height: 22px;
       border-radius: 50%;
       border-left-color: var(--accent);
-      animation: spin 1s linear infinite;
-      margin: 12px auto;
+      animation: spin 0.8s linear infinite;
+      margin: 6px auto;
     }
 
     @keyframes spin {
@@ -145,18 +179,22 @@
     .status-text {
       text-align: center;
       color: var(--text-muted);
-      font-size: 13px;
+      font-size: 12px;
+      font-weight: 500;
+      margin-top: 6px;
     }
 
     .error-msg {
       background-color: rgba(239, 68, 68, 0.1);
-      border: 1px solid rgba(239, 68, 68, 0.3);
+      border: 1px solid rgba(239, 68, 68, 0.2);
       color: var(--danger);
-      padding: 10px;
-      border-radius: 6px;
-      margin-top: 12px;
-      font-size: 13px;
+      padding: 12px;
+      border-radius: 10px;
+      margin-top: 14px;
+      font-size: 12.5px;
+      font-weight: 500;
       display: none;
+      text-align: center;
     }
 
     .results {
@@ -168,20 +206,24 @@
 
     .video-info {
       display: flex;
-      gap: 10px;
-      background-color: var(--card-bg);
-      border: 1px solid var(--border);
-      padding: 10px;
-      border-radius: 8px;
+      gap: 12px;
+      background: var(--glass-bg);
+      border: 1px solid var(--glass-border);
+      box-shadow: var(--inner-glow), var(--shadow);
+      padding: 12px;
+      border-radius: 12px;
+      backdrop-filter: blur(15px);
+      -webkit-backdrop-filter: blur(15px);
     }
 
     .thumbnail {
-      width: 90px;
-      height: 54px;
-      background-color: #1e293b;
-      border-radius: 4px;
+      width: 96px;
+      height: 58px;
+      background-color: #020617;
+      border-radius: 8px;
       object-fit: cover;
       flex-shrink: 0;
+      border: 1px solid rgba(255, 255, 255, 0.05);
     }
 
     .video-details {
@@ -189,15 +231,16 @@
       flex-direction: column;
       justify-content: center;
       overflow: hidden;
+      gap: 3px;
     }
 
     .video-title {
       font-size: 13px;
-      font-weight: 600;
+      font-weight: 700;
+      color: white;
       white-space: nowrap;
       overflow: hidden;
       text-overflow: ellipsis;
-      margin-bottom: 2px;
     }
 
     .video-author {
@@ -206,13 +249,14 @@
       white-space: nowrap;
       overflow: hidden;
       text-overflow: ellipsis;
+      font-weight: 500;
     }
 
     .formats-list {
       display: flex;
       flex-direction: column;
-      gap: 6px;
-      max-height: 200px;
+      gap: 8px;
+      max-height: 220px;
       overflow-y: auto;
       padding-right: 4px;
     }
@@ -225,7 +269,7 @@
       background: transparent;
     }
     .formats-list::-webkit-scrollbar-thumb {
-      background: var(--border);
+      background: var(--glass-border);
       border-radius: 2px;
     }
 
@@ -233,19 +277,23 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      background-color: #161f30;
-      border: 1px solid var(--border);
-      padding: 8px 12px;
-      border-radius: 6px;
+      background: rgba(255, 255, 255, 0.02);
+      border: 1px solid var(--glass-border);
+      padding: 10px 14px;
+      border-radius: 10px;
       color: var(--text);
       text-decoration: none;
-      font-size: 12px;
+      font-size: 12.5px;
+      font-weight: 600;
       transition: all 0.2s ease;
+      box-shadow: var(--inner-glow);
     }
 
     .format-btn:hover {
-      background-color: rgba(139, 92, 246, 0.15);
-      border-color: var(--accent);
+      background: rgba(139, 92, 246, 0.1);
+      border-color: rgba(139, 92, 246, 0.3);
+      color: white;
+      transform: translateY(-0.5px);
     }
 
     .format-left {
@@ -255,24 +303,27 @@
     }
 
     .format-badge {
-      background-color: rgba(139, 92, 246, 0.2);
-      color: #a78bfa;
-      padding: 2px 6px;
-      border-radius: 4px;
-      font-size: 10px;
-      font-weight: bold;
+      background-color: rgba(167, 139, 250, 0.15);
+      color: #c084fc;
+      padding: 3px 7px;
+      border-radius: 6px;
+      font-size: 9.5px;
+      font-weight: 800;
       text-transform: uppercase;
+      letter-spacing: 0.02em;
+      border: 1px solid rgba(167, 139, 250, 0.2);
     }
 
     .format-right {
       display: flex;
       align-items: center;
-      gap: 4px;
+      gap: 6px;
       color: var(--text-muted);
     }
 
     .format-size {
       font-size: 11px;
+      font-weight: 500;
     }
 
     .svg-icon {
@@ -284,13 +335,12 @@
 </head>
 <body>
   <div class="header">
-    <!-- Lucide ArrowDownToLine style SVG -->
     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
       <path d="M12 17V3"/>
       <path d="m6 11 6 6 6-6"/>
       <path d="M19 21H5"/>
     </svg>
-    <div class="title">GenDownload Helper</div>
+    <div class="title">Downloader</div>
   </div>
 
   <div class="url-preview-container">

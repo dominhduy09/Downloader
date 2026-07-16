@@ -1,6 +1,6 @@
 {
   "manifest_version": 3,
-  "name": "GenDownload Helper",
+  "name": "Downloader",
   "version": "1.0.0",
   "description": "Quick video/audio downloader and companion extension for the Downloader Web Application.",
   "permissions": [

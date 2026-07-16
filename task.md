@@ -13,6 +13,8 @@
   - [x] Create `popup.html` and `popup.js` for the compact popup interface
   - [x] Create `background.js` for context menus and page integration
   - [x] Generate extension icons
+  - [x] Rename extension and align styles with the dewy glassmorphism web style
+  - [x] Compile extension files into a public zip archive
 - [x] Sidebar Restructuring & Pages
   - [x] Implement responsive sidebar navigation (with mobile slider)
   - [x] Add content pages: Why Downloader, How to Use, FAQs, API Docs
