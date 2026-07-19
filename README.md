@@ -1,6 +1,8 @@
 <div align="center">
+<img width="128" height="128" alt="23868" src="https://github.com/user-attachments/assets/393508be-1208-4a8f-99ce-5e1d4eb75042" />
 
 # 📥 Downloader
+
 
 **A premium, high-performance video & audio extractor featuring a WebGL 3D particle network and a companion Chrome Extension**
 
