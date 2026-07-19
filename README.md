@@ -30,7 +30,7 @@
 - [Support](#-support)
 - [Author](#-author)
 - [License](#-license)
-- [Privacy Policy](#privacy-policy)
+- [Privacy Policy](#-privacy-policy)
 
 
 ---
