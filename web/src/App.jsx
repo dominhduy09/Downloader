@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import ThreeBg from "./components/ThreeBg";
 import { useLanguage } from "./context/LanguageContext";
+import { Analytics } from "@vercel/analytics/react";
 import {
   Download,
   Video,
@@ -1572,6 +1573,7 @@ Content-Disposition: attachment; filename="..."`}
           </div>
         </div>
       </footer>
+      <Analytics />
     </div>
   );
 }
