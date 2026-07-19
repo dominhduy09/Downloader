@@ -30,6 +30,8 @@
 - [Support](#-support)
 - [Author](#-author)
 - [License](#-license)
+- [Privacy Policy](#privacy-policy)
+
 
 ---
 
@@ -195,3 +197,10 @@ Minh Duy Do
 ## 📜 License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+---
+
+## 📜 Privacy Policy
+
+We respect your data privacy. Please read our [Privacy.md](Privacy.md) file to understand how we process planner inputs and cookies.
+
